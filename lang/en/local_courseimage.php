@@ -25,7 +25,7 @@
 
 
 $string['pluginname'] = 'Course image';
-$string['courseimage'] = 'Course image';
+$string['courseimage'] = 'Change course image';
 $string['manage'] = 'Manage course image';
 $string['uploadimage'] =
     'Upload a course image';
