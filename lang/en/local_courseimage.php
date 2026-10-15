@@ -31,3 +31,4 @@ $string['uploadimage'] =
     'Upload a course image';
 $string['privacy:metadata'] =
     'The plugin does not store personal data.';
+$string['courseimage:manage'] = 'Manage course image';

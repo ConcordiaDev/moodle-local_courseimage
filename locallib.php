@@ -33,10 +33,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param context_course $context
  * @return int Number of files stored.
  */
-function local_courseimage_save_image(
-    int $draftitemid,
-    context_course $context
-): int {
+function local_courseimage_save_image(int $draftitemid, context_course $context): int {
 
     file_save_draft_area_files(
         $draftitemid,
@@ -50,6 +47,7 @@ function local_courseimage_save_image(
         ]
     );
 
+    
     $filestorage = get_file_storage();
 
     $files = $filestorage->get_area_files(
@@ -60,6 +58,9 @@ function local_courseimage_save_image(
         'filename',
         false
     );
+
+    // Purge course image cache .
+    \cache::make('core', 'course_image')->delete($context->instanceid);
 
     $filecount = count($files);
 
